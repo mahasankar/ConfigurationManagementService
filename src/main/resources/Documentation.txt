@@ -46,8 +46,6 @@ git status
 
 git push origin main
 
-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
-
 git pull origin main
 
 
