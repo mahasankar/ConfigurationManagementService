@@ -1,0 +1,25 @@
+CREATE TABLE IF NOT EXISTS public.configuration_master
+(
+    config_id bigint NOT NULL,
+    param_name character varying(255) NOT NULL,
+    param_value character varying(255)NOT NULL,
+    CONSTRAINT configuration_master_pkey PRIMARY KEY (config_id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.configuration_master OWNER to postgres;
+
+POST http://localhost:9010/ConfigurationManagementService/V1/config/update
+{
+    "parameterName"  : "param1",
+    "parameterValue" : "value1"
+}
+Response Body (200 OK): Empty
+
+GET http://localhost:9010/ConfigurationManagementService/V1/config/get/param1
+Response Body (200 OK): value1
+
+
+
+https://github.com/bezkoder/spring-boot-jpa-postgresql
