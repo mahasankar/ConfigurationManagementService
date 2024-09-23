@@ -6,10 +6,6 @@ CREATE TABLE IF NOT EXISTS public.configuration_master
     CONSTRAINT configuration_master_pkey PRIMARY KEY (config_id)
 )
 
-TABLESPACE pg_default;
-
-ALTER TABLE IF EXISTS public.configuration_master OWNER to postgres;
-
 POST http://localhost:9010/ConfigurationManagementService/V1/config/update
 {
     "parameterName"  : "param1",
@@ -22,4 +18,26 @@ Response Body (200 OK): value1
 
 
 
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.configuration_master OWNER to postgres;
+
 https://github.com/bezkoder/spring-boot-jpa-postgresql
+
+
+go to the root folder of the new project
+
+git config --global user.email "mahadev@hotmail.com"
+
+git init -b main
+
+git add .
+
+git commit -m "commit"
+
+git remote add origin https://github.com/mahasankar/ConfigurationManagementService.git
+
+git push origin main
+
+
