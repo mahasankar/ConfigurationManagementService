@@ -30,14 +30,24 @@ go to the root folder of the new project
 
 git config --global user.email "mahadev@hotmail.com"
 
+git remote add origin https://github.com/mahasankar/ConfigurationManagementService.git
+
+git remote -v
+
 git init -b main
 
 git add .
 
+git status
+
 git commit -m "commit"
 
-git remote add origin https://github.com/mahasankar/ConfigurationManagementService.git
+git status
 
 git push origin main
+
+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
+
+git pull origin main
 
 
